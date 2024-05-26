@@ -6,9 +6,11 @@
 /*   By: yutsasak <yutsasak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 16:07:11 by yutsasak          #+#    #+#             */
-/*   Updated: 2024/05/24 20:02:17 by yutsasak         ###   ########.fr       */
+/*   Updated: 2024/05/26 21:39:13 by yutsasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *s)
 {
