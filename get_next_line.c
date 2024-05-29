@@ -6,7 +6,7 @@
 /*   By: yutsasak <yutsasak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:53:00 by yutsasak          #+#    #+#             */
-/*   Updated: 2024/05/29 11:57:29 by yutsasak         ###   ########.fr       */
+/*   Updated: 2024/05/29 15:41:56 by yutsasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ static char	*read_line(int fd, char *buffer)
 	char	buf[BUFFER_SIZE + 1];
 	ssize_t	bytes_read;
 
-	while ((newline = ft_strchr(buffer, '\n')) == NULL)
+	newline = ft_strchr(buffer, '\n');
+	while (newline == NULL)
 	{
 		bytes_read = read(fd, buf, BUFFER_SIZE);
 		if (bytes_read <= 0)
@@ -31,14 +32,16 @@ static char	*read_line(int fd, char *buffer)
 		}
 		buf[bytes_read] = '\0';
 		tmp = ft_strjoin(buffer, buf);
-		if (!tmp)
+		if (tmp == NULL)
 		{
 			if (bytes_read == 0 && buffer[0])
 				return (buffer);
 			free(buffer);
 			return (NULL);
 		}
+		free(buffer);
 		buffer = tmp;
+		newline = ft_strchr(buffer, '\n');
 	}
 	return (buffer);
 }
