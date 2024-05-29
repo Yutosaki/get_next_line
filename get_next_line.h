@@ -6,7 +6,7 @@
 /*   By: yutsasak <yutsasak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:59:20 by yutsasak          #+#    #+#             */
-/*   Updated: 2024/05/26 21:39:43 by yutsasak         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:26:38 by yutsasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
+char	*ft_strcpy(char *dest, const char *src);
 
 #endif

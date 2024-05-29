@@ -6,7 +6,7 @@
 /*   By: yutsasak <yutsasak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 16:07:11 by yutsasak          #+#    #+#             */
-/*   Updated: 2024/05/26 21:39:13 by yutsasak         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:58:13 by yutsasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ size_t	ft_strlen(const char *s)
 char	*ft_strdup(const char *s1)
 {
 	size_t	length;
-	char	*copy;
 	size_t	i;
+	char	*copy;
 
-	length = ft_strlen(s1);
-	copy = (char *)malloc(length + 1);
-	if (!copy)
-		return (NULL);
 	i = 0;
+	length = ft_strlen(s1);
+	copy = (char *)malloc(sizeof(char) * (length + 1));
+	if (copy == NULL)
+		return (NULL);
 	while (i < length)
 	{
 		copy[i] = s1[i];
@@ -87,4 +87,18 @@ char	*ft_strchr(const char *s, int c)
 	if (c == '\0')
 		return ((char *)s);
 	return (NULL);
+}
+
+char	*ft_strcpy(char *dest, const char *src)
+{
+	size_t	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
