@@ -6,11 +6,19 @@
 /*   By: yutsasak <yutsasak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:53:00 by yutsasak          #+#    #+#             */
-/*   Updated: 2024/05/29 15:41:56 by yutsasak         ###   ########.fr       */
+/*   Updated: 2024/05/29 20:10:59 by yutsasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	*handle_free(ssize_t bytes_read, char *buffer)
+{
+	if (bytes_read == 0 && buffer[0])
+		return (buffer);
+	free(buffer);
+	return (NULL);
+}
 
 static char	*read_line(int fd, char *buffer)
 {
@@ -24,18 +32,11 @@ static char	*read_line(int fd, char *buffer)
 	{
 		bytes_read = read(fd, buf, BUFFER_SIZE);
 		if (bytes_read <= 0)
-		{
-			if (bytes_read == 0 && buffer[0])
-				return (buffer);
-			free(buffer);
-			return (NULL);
-		}
+			return (handle_free(bytes_read, buffer));
 		buf[bytes_read] = '\0';
 		tmp = ft_strjoin(buffer, buf);
 		if (tmp == NULL)
 		{
-			if (bytes_read == 0 && buffer[0])
-				return (buffer);
 			free(buffer);
 			return (NULL);
 		}
@@ -89,4 +90,23 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = extract_line(&buffer[fd]);
 	return (line);
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	src_len;
+	size_t	i;
+
+	src_len = ft_strlen(src);
+	i = 0;
+	if (dstsize > 0)
+	{
+		while (src[i] && i < dstsize - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (src_len);
 }
