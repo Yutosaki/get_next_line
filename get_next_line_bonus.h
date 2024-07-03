@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yutsasak <yutsasak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:59:20 by yutsasak          #+#    #+#             */
-/*   Updated: 2024/07/03 21:15:53 by yutsasak         ###   ########.fr       */
+/*   Updated: 2024/07/03 21:20:20 by yutsasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 #  define BUFFER_SIZE 42
 # endif
 
-# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 # if BUFFER_SIZE > 2147483646 || BUFFER_SIZE < 0
 #  undef BUFFER_SIZE
