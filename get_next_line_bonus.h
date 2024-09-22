@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yutsasak <yutsasak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: sasakiyuto <sasakiyuto@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:59:20 by yutsasak          #+#    #+#             */
-/*   Updated: 2024/09/21 12:24:04 by yutsasak         ###   ########.fr       */
+/*   Updated: 2024/09/22 11:35:49 by sasakiyuto       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# if BUFFER_SIZE > 2147483646 || BUFFER_SIZE < 0
+# if BUFFER_SIZE > 1000000 || BUFFER_SIZE < 0
 #  undef BUFFER_SIZE
 #  define BUFFER_SIZE 0
-
 # endif
 
 char	*get_next_line(int fd);
