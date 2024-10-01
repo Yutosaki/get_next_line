@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yutsasak <yutsasak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: sasakiyuto <sasakiyuto@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:53:00 by yutsasak          #+#    #+#             */
-/*   Updated: 2024/07/03 21:17:07 by yutsasak         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:14:16 by sasakiyuto       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
