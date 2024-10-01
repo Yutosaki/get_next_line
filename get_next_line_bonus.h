@@ -6,12 +6,16 @@
 /*   By: sasakiyuto <sasakiyuto@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:59:20 by yutsasak          #+#    #+#             */
-/*   Updated: 2024/09/22 11:35:49 by sasakiyuto       ###   ########.fr       */
+/*   Updated: 2024/10/01 17:30:47 by sasakiyuto       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 10240
+# endif
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
