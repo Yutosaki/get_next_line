@@ -6,7 +6,7 @@
 /*   By: sasakiyuto <sasakiyuto@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:53:00 by yutsasak          #+#    #+#             */
-/*   Updated: 2024/10/20 14:10:55 by sasakiyuto       ###   ########.fr       */
+/*   Updated: 2024/10/20 17:44:21 by sasakiyuto       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,12 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
 		return (NULL);
 	if (!buffer[fd])
-    {
-        temp = ft_strdup("");
-        if (!temp)
-            return (NULL);
-        buffer[fd] = temp;
-    }
+	{
+		temp = ft_strdup("");
+		if (!temp)
+			return (NULL);
+		buffer[fd] = temp;
+	}
 	buffer[fd] = read_line(fd, buffer[fd]);
 	if (!buffer[fd])
 		return (NULL);
